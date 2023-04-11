@@ -1,4 +1,6 @@
-class Banan extends LivingCreature{
+let LivingCreature = require("./LivingCreature")
+
+module.export = class Banan extends LivingCreature{
     constructor(x,y){
        super(x,y)
         this.multiply = 0

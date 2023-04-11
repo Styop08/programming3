@@ -1,4 +1,6 @@
-class Kaxin extends LivingCreature{
+let LivingCreature = require("./LivingCreature")
+
+module.export = class Kaxin extends LivingCreature{
     constructor(x,y){
        super(x,y)
         this.multiply = 0
