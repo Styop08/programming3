@@ -31,7 +31,7 @@ module.export = class Skyur extends LivingCreature{
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
@@ -49,7 +49,7 @@ module.export = class Skyur extends LivingCreature{
 
     eat() {
         let emptyCell = this.chooseCell(4)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
         if (newCell) {
             this.energy += 7
             let newX = newCell[0]
@@ -80,7 +80,7 @@ module.export = class Skyur extends LivingCreature{
 
     move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
 
             if(newCell){
                 let newX = newCell[0]
