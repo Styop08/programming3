@@ -1,6 +1,6 @@
 let LivingCreature = require("./LivingCreature")
 
-module.export = class Kapik extends LivingCreature{
+module.exports = class Kapik extends LivingCreature{
     constructor(x, y) {
        super(x,y)
         this.energy = 20

@@ -101,14 +101,14 @@ kapikArr = []
 
 
 //moduls
-Grass = require("./grass")
-GrassEater = require("./grassEater")
-Predator = require("./predator")
-Banan = require("./banan")
-Kapik = require("./kapik")
-Kaxin = require("./kaxin")
-Skyur = require("./skyur")
-//frerffefre
+Grass = require('./grass')
+GrassEater = require('./grassEater')
+Predator = require('./predator')
+Banan = require('./banan')
+Kapik = require('./kapik')
+Kaxin = require('./kaxin')
+Skyur = require('./skyur')
+
 
 
 function createObject() {
@@ -141,6 +141,58 @@ function createObject() {
             }
         }
     }
+
+    io.sockets.emit("send matrix", matrix)
+
 }
 
-matrix = matrixGenerator(20, 17, 7, 4, 20, 20, 20, 30,)
+
+
+function game() {
+
+    for (let i in grassArr) {
+        grassArr[i].mul()
+    }
+
+
+    for (let i in grassEaterArr) {
+        grassEaterArr[i].eat()
+    }
+
+
+    for (let i in predatorArr) {
+        predatorArr[i].eat()
+    }
+
+    for (let i in kaxinArr) {
+        kaxinArr[i].mul()
+    }
+
+
+    for (let i in skyurArr) {
+        skyurArr[i].eat()
+    }
+
+    for (let i in bananArr) {
+        bananArr[i].mul()
+    }
+
+    for (let i in kapikArr) {
+        kapikArr[i].eat()
+    }
+
+    io.sockets.emit("send matrix", matrix)
+}
+
+    setInterval(game,500)
+
+
+
+
+
+
+io.on('connection', function () {
+    createObject()
+})
+
+
