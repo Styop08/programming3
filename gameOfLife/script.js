@@ -6,7 +6,7 @@ let side = 30
 
 function setup() {
         createCanvas(20 * side, 20 * side)
-
+        background("#acacac");
 }
 function nkarel(matrix) {
         for (let y = 0; y < matrix.length; y++) {
@@ -63,3 +63,26 @@ function nkarel(matrix) {
 }
 
 socket.on("send matrix",nkarel)
+
+function AddGrass(){
+        socket.emit("addGrass");
+    }
+    function AddGrassEater(){
+        socket.emit("addGrassEater");
+    }
+    function AddPredator(){
+        socket.emit("addPredator");
+    }
+    function AddKaxin(){
+        socket.emit("addKaxin");
+    }
+    function AddSkyur(){
+        socket.emit("addSkyur");
+    }
+    function AddBanan(){
+        socket.emit("addBanan");
+    }
+    function AddKapik(){
+        socket.emit("addKapik");
+    
+    }

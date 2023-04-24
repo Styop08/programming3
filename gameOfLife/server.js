@@ -3,7 +3,8 @@ var app = express()
 
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
-var fs = require("fs")
+var fs = require("fs");
+
 
 app.use(express.static("."));
 
@@ -107,7 +108,7 @@ Predator = require('./predator')
 Banan = require('./banan')
 Kapik = require('./kapik')
 Kaxin = require('./kaxin')
-Skyur = require('./skyur')
+Skyur= require('./skyur')
 
 
 
@@ -184,10 +185,126 @@ function game() {
     io.sockets.emit("send matrix", matrix)
 }
 
-    setInterval(game,500)
+    setInterval(game,300)
 
 
+    function AddGrass() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 1;
+                var gr = new Grass(x, y);
+                grassArr.push(gr);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddGrassEater() {
+        let count = 0;
+        for (var i = 0; i < 50; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (count < 7) {
+                if (i < 30) {
+                    if (matrix[y][x] == 0) {
+                        count++;
+                        matrix[y][x] = 2;
+                        var grEater = new GrassEater(x, y);
+                        grassEaterArr.push(grEater);
+                    }
+    
+                } else if (i >= 30) {
+                    if (matrix[y][x] == 0 || matrix[y][x] == 1) {
+                        count++;
+                        matrix[y][x] = 2;
+                        var grEater = new GrassEater(x, y);
+                        grassEaterArr.push(grEater);
+                    }
+                }
+            }
+    
+    
+        }
+    
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddPredator() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 3;
+                var pre = new Predator(x, y);
+                predatorArr.push(pre);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    function AddPredator() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 3;
+                var pre = new Predator(x, y);
+                predatorArr.push(pre);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    
+    function AddKaxin() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 4;
+                var kx = new Kaxin(x, y);
+                kaxinArr.push(kx);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    
+    function AddSkyur() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 5;
+                var sk = new Skyur(x, y);
+                skyurArr.push(sk);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
+    
+    function AddBanan() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 6;
+                var bn = new Banan(x, y);
+                bananArr.push(bn);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
 
+    function AddKapik() {
+        for (var i = 0; i < 7; i++) {
+            var x = Math.floor(Math.random() * matrix[0].length)
+            var y = Math.floor(Math.random() * matrix.length)
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 7;
+                var kp = new Kapik(x, y);
+                kapikArr.push(kp);
+            }
+        }
+        io.sockets.emit("send matrix", matrix);
+    }
 
 
 
