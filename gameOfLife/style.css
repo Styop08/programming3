@@ -1,0 +1,51 @@
+canvas {
+    margin-left: 33%;
+    margin-top: 10%;
+}
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(141, 43, 233) 42%, rgb(0, 183, 255) 83%);
+}
+
+h1{
+    text-shadow: black 2px 2px;
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+h2{
+    text-shadow: black 2px 2px;
+    font-style: italic;
+    color: rgb(104, 157, 68);
+    text-align: center;
+}h3{
+    text-shadow: black 2px 2px;
+    font-style: italic;
+    color: rgb(255, 247, 0);
+    text-align: center;
+}
+
+button {
+    background-color: rgb(141, 52, 52);
+    border: 2px solid #2d75d361;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 5px;
+  }

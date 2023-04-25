@@ -1,5 +1,5 @@
 var socket = io()
-let side = 30
+var side = 30
 ///օբյեկտներ պահելու զանգվածներ
 
 
@@ -8,6 +8,9 @@ function setup() {
         createCanvas(20 * side, 20 * side)
         background("#acacac");
 }
+
+
+
 function nkarel(matrix) {
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
@@ -64,25 +67,25 @@ function nkarel(matrix) {
 
 socket.on("send matrix",nkarel)
 
-function AddGrass(){
+function addGrass(){
         socket.emit("addGrass");
     }
-    function AddGrassEater(){
+    function addGrassEater(){
         socket.emit("addGrassEater");
     }
-    function AddPredator(){
+    function addPredator(){
         socket.emit("addPredator");
     }
-    function AddKaxin(){
+    function addKaxin(){
         socket.emit("addKaxin");
     }
-    function AddSkyur(){
+    function addSkyur(){
         socket.emit("addSkyur");
     }
-    function AddBanan(){
+    function addBanan(){
         socket.emit("addBanan");
     }
-    function AddKapik(){
+    function addKapik(){
         socket.emit("addKapik");
     
     }

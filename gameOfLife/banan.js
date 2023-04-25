@@ -1,6 +1,6 @@
 let LivingCreature = require("./LivingCreature")
 
-module.export = class Banan extends LivingCreature{
+module.exports = class Banan extends LivingCreature{
     constructor(x,y){
        super(x,y)
         this.multiply = 0
@@ -13,7 +13,7 @@ module.export = class Banan extends LivingCreature{
    mul(){
     this.multiply++
      let emptyCell = this.chooseCell(0)
-     let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
+     let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
  
      if(newCell && this.multiply >= 20){
                 let newX  =   newCell[0]

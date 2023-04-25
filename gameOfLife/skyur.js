@@ -1,8 +1,8 @@
 let LivingCreature = require("./LivingCreature")
 
-module.exports = class Skyur extends LivingCreature{
+module.exports = class Skyur extends LivingCreature {
     constructor(x, y) {
-       super(x,y)
+        super(x, y)
         this.energy = 10
         this.directions = [];
     }
@@ -24,14 +24,14 @@ module.exports = class Skyur extends LivingCreature{
 
     chooseCell(char) {
         this.getNewCoordinates()
-       return super.chooseCell(char)
+        return super.chooseCell(char)
 
     }
 
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
@@ -49,7 +49,7 @@ module.exports = class Skyur extends LivingCreature{
 
     eat() {
         let emptyCell = this.chooseCell(4)
-        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
         if (newCell) {
             this.energy += 7
             let newX = newCell[0]
@@ -78,38 +78,38 @@ module.exports = class Skyur extends LivingCreature{
     }
 
 
-    move(){
+    move() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
-            if(newCell){
-                let newX = newCell[0]
-                let newY = newCell[1]
+        if (newCell) {
+            let newX = newCell[0]
+            let newY = newCell[1]
 
-                matrix[newY][newX] = 5
-                matrix[this.y][this.x] = 0
-                
-                this.x = newX
-                this.y = newY
+            matrix[newY][newX] = 5
+            matrix[this.y][this.x] = 0
 
-                this.energy--
+            this.x = newX
+            this.y = newY
 
-                if(this.energy < 0){
-                    this.die ()
-                }
+            this.energy--
+
+            if (this.energy < 0) {
+                this.die()
             }
-     }
+        }
+    }
 
 
 
-     die(){
+    die() {
         matrix[this.y][this.x] = 0
 
-          for(let i in skyurArr){
-                   if(this.x == skyurArr[i].x && this.y == skyurArr[i].y) {
-                             skyurArr.splice(i,1)
-                   }
-          }
+        for (let i in skyurArr) {
+            if (this.x == skyurArr[i].x && this.y == skyurArr[i].y) {
+                skyurArr.splice(i, 1)
+            }
+        }
     }
 
 

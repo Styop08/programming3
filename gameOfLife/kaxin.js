@@ -14,7 +14,7 @@ module.exports = class Kaxin extends LivingCreature{
    mul(){
     this.multiply++
      let emptyCell = this.chooseCell(0)
-     let newCell = emptyCell[Math.floor(Math.random * emptyCell.length)]
+     let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
  
      if(newCell && this.multiply >= 6){
                 let newX  =   newCell[0]
