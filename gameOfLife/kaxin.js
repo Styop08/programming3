@@ -16,7 +16,29 @@ module.exports = class Kaxin extends LivingCreature{
      let emptyCell = this.chooseCell(0)
      let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
  
-     if(newCell && this.multiply >= 6){
+     if(newCell && this.multiply >= 3){
+                let newX  =   newCell[0]
+                let newY  =   newCell[1]
+
+                matrix[newY][newX] = 4
+
+                let kaxin = new Kaxin(newX,newY)
+                kaxinArr.push(kaxin)
+
+
+                this.multiply = 0
+
+
+     }
+     
+}
+
+mul1(){
+    this.multiply++
+     let emptyCell = this.chooseCell(0)
+     let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
+ 
+     if(newCell && this.multiply >= 7){
                 let newX  =   newCell[0]
                 let newY  =   newCell[1]
 
@@ -34,3 +56,6 @@ module.exports = class Kaxin extends LivingCreature{
 }
 
 }
+
+
+   

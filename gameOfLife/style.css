@@ -5,7 +5,7 @@ canvas {
 body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(141, 43, 233) 42%, rgb(0, 183, 255) 83%);
-}
+} 
 
 h1{
     text-shadow: black 2px 2px;
@@ -21,7 +21,7 @@ h2{
 }h3{
     text-shadow: black 2px 2px;
     font-style: italic;
-    color: rgb(255, 247, 0);
+    color: rgb(255, 85, 0);
     text-align: center;
 }
 

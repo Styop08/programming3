@@ -186,6 +186,25 @@ function game() {
 
 setInterval(game, 300)
 
+var weath;
+
+function Winter(){
+    weath = "winter";
+    io.sockets.emit('Winter',weath)
+}
+function Summer() {
+    weath = "summer";
+    io.sockets.emit('Summer', weath);
+}
+function Spring() {
+    weath = "spring";
+    io.sockets.emit('Spring', weath);
+}
+function Autumn() {
+    weath = "autumn";
+    io.sockets.emit('Autumn', weath);
+}
+
 function addGrass() {
     for (var i = 0; i < 5; i++) {
         var x = Math.floor(Math.random() * matrix[0].length)
@@ -269,12 +288,32 @@ function addKapik() {
     }
     io.sockets.emit("send matrix", matrix);
 }
+function kill() {
+    grassArr = [];
+    grassEaterArr = [];
+    predatorArr = [];
+    kaxinArr = [];
+    skyurArr = [];
+    bananArr = [];
+    kapikArr = [];
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[y].length; x++) {
+            matrix[y][x] = 0;
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
 
 
 
 
 io.on('connection', function (socket) {
     createObject()
+    socket.on("spring",Spring)
+    socket.on("summer",Summer)
+    socket.on("autumn",Autumn)
+    socket.on("winter",Winter)
+    socket.on("killall",kill)
     socket.on("addGrass",addGrass)
     socket.on("addGrassEater",addGrassEater)
     socket.on("addPredator",addPredator)
@@ -284,4 +323,17 @@ io.on('connection', function (socket) {
     socket.on("addKapik",addKapik)
 })
 
+
+var statistics = {};
+setInterval(function () {
+    statistics.grass = grassArr.length;
+    statistics.grassEater = grassEaterArr.length;
+    statistics.predator = predatorArr.length;
+    statistics.kaxin = kaxinArr.length;
+    statistics.skyur = skyurArr.length;
+    statistics.banan = bananArr.length;
+    statistics.kapik = kapikArr.length;
+    fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
+    })
+}, 1000);
 

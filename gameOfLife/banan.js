@@ -15,7 +15,7 @@ module.exports = class Banan extends LivingCreature{
      let emptyCell = this.chooseCell(0)
      let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
  
-     if(newCell && this.multiply >= 20){
+     if(newCell && this.multiply >= 3){
                 let newX  =   newCell[0]
                 let newY  =   newCell[1]
 

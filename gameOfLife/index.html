@@ -16,38 +16,34 @@
     <h1>GAME OF LIFE</h1>
     <h1>Styopa Soghoyan</h1>
 
-    <h3>☘️ - ԽՈՏ,     ԲԱԶՄԱՆՈՒՄ Է ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐԻՑ ՄԵԿՈՒՄ <br>
-    🐄 - ԿՈՎ,   ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐՈՒՄ ՓՆՏՐՈՒՄ Է  ԽՈՏ ԵՎ ՈՒՏՈՒՄ(ԷՆԵՐԳՅԱՆ ՄԵԾԱՆՈՒՄ Է), ԵԹԵ ՉԻ ԳՏՆՈՒՄ ԽՈՏ, ԷՆԵՐԳՅԱՆ ՎԵՐՋԱՆՈՒՄ Է, ՄԱՀԱՆՈՒՄ Է<br>
-   🐆 - ՎԱՅՐԻ ԿԵՆԴԱՆԻ,ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐՈՒՄ ՓՆՏՐՈՒՄ Է  ԽՈՏ ԵՎ ԿՈՎ ՈՒ ՈՒՏՈՒՄ(ԷՆԵՐԳՅԱՆ ՄԵԾԱՆՈՒՄ Է),ԵԹԵ ՉԻ ԳՏՆՈՒՄ ԽՈՏ ԵՎ ԿՈՎ, ԷՆԵՐԳՅԱՆ ՎԵՐՋԱՆՈՒՄ Է, ՄԱՀԱՆՈՒՄ Է<br>
-   🌰 - ԿԱՂԻՆ, ԲԱԶՄԱՆՈՒՄ Է ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐԻՑ ՄԵԿՈՒՄ<br>
-   🐿 - ՍԿՅՈՒՌ,  ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐՈՒՄ ՓՆՏՐՈՒՄ Է ԿԱՂԻՆ ԵՎ ՈՒՏՈՒՄ(ԷՆԵՐԳՅԱՆ ՄԵԾԱՆՈՒՄ Է), ԵԹԵ ՉԻ ԳՏՆՈՒՄ ԿԱՂԻՆ, ԷՆԵՐԳՅԱՆ ՎԵՐՋԱՆՈՒՄ Է, ՄԱՀԱՆՈՒՄ Է<br>
-   🍌 - ԲԱՆԱՆ, ԲԱԶՄԱՆՈՒՄ Է ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐԻՑ ՄԵԿՈՒՄ <br>
-   🐵 - ԿԱՊԻԿ,  ՀԱՐԵՎԱՆ 8 ՎԱՆԴԱԿՆԵՐՈՒՄ ՓՆՏՐՈՒՄ Է ԲԱՆԱՆ ԵՎ ՈՒՏՈՒՄ(ԷՆԵՐԳՅԱՆ ՄԵԾԱՆՈՒՄ Է), ԵԹԵ ՉԻ ԳՏՆՈՒՄ ԲԱՆԱՆ, ԷՆԵՐԳՅԱՆ ՎԵՐՋԱՆՈՒՄ Է, ՄԱՀԱՆՈՒՄ Է </h3>
+    <h3>☘️ - Խոտ,բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը կամ գիշատիչը։<br>
+    🐄 - Կով,բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ երբ նրան ուտում է գիշատիչը<br>
+   🐆 - Վայրի կենդանի,բազմանում է N հատ խոտ կամ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց<br>
+   🌰 - Կաղին, բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է սկյուռը<br>
+   🐿 - Սկյուռ, բազմանում է N հատ կաղին ուտելուց հետո և մահանում է N հատ չուտելուց հետո<br>
+   🍌 - Բանան, բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է կապիկը <br>
+   🐵 - Կապիկ, բազմանում է N հատ բանան ուտելուց հետո և մահանում է N հատ չուտելուց հետո</h3>
 
-    <div class="container">
-        <button onclick="addGrass()" >Add Grass</button>
-    </div>
-    <div>
-        <button onclick="addGrassEater()" >Add Grass Eater</button>
-    </div>
-    <div>
-        <button onclick="addPredator()" >Add Predator</button>
-    </div>
-    <div>
-        <button onclick="addKaxin()">Add Kaxin</button>
-    </div> 
-    <div>
-        <button onclick="addSkyur()">Add Skyur</button>
-    </div> 
-    <div>
-        <button onclick="addBanan()">Add Banan</button>
-    </div> 
-    <div>
-        <button onclick="addKapik()">Add Kapik</button>
-    </div> 
+   <div class="all__btns">
+    <button onclick="addGrass()" class="add__btn" style="background-color: green">Add Grass</button>
+    <button onclick="addGrassEater()" class="add__btn" style="background-color: yellow; color: black">Add GrassEater</button>
+    <button onclick="addPredator()" class="add__btn" style="background-color: red">Add Gishatic</button>
+    <button onclick="addKaxin()" class="add__btn" style="background-color: brown">Add Kaxin</button>
+    <button onclick="addSkyur()" class="add__btn" style="background-color: white">Add Skyur</button>
+    <button onclick="addBanan()" class="add__btn" style="background-color: orange">Add Banan</button>
+    <button onclick="addKapik()" class="add__btn" style="background-color: black; color: white">Add Kapik</button>
+    <button onclick="killall()" class="add__btn" style="background-color: rgb(50, 109, 64); color: black">Kill All</button>
 
+</div>
 
+    <div class="exanak__btns">
+        <button onclick="Spring()" class="btn__exanak" style="background-color: darkgreen">Spring</button>
+        <button onclick="Summer()" class="btn__exanak" style="background-color: #79a83b">Summer</button>
+        <button onclick="Autumn()" class="btn__exanak" style="background-color: #ff8453">Autumn</button>
+        <button onclick="Winter()" class="btn__exanak" style="background-color: #ffffff">Winter</button>
     </div>
+
+    
 
     <script src="/socket.io/socket.io.js"></script>
 
