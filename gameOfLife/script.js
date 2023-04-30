@@ -60,9 +60,38 @@ function nkarel(matrix) {
                                         fill("white");
                                         rect(x * side, y * side, side, side);
                                         text('🐿', x * side, y * side + toBot);
+                                }else if( weath == "summer"){
+                                        fill("#694940");
+                                        rect(x * side, y * side, side, side);
+                                        text('🐿', x * side, y * side + toBot);
+                                }else if( weath == "autumn"){
+                                        fill("#694940");
+                                        rect(x * side, y * side, side, side);
+                                        text('🐿', x * side, y * side + toBot);
                                 }
 
                             }
+                            if(matrix[y][x] == 6){
+                             if(weath == "spring"){
+                                fill("#5BFF5F");
+                                rect(x * side, y * side, side, side);
+                                text('🍌', x * side, y * side + toBot);
+                             }
+                             else if(weath == "summer"){
+                                fill("#FFF854");
+                                rect(x * side, y * side, side, side);
+                                text('🍌', x * side, y * side + toBot);
+                            }
+                            else if(weath == "autumn"){
+                                fill("#FBED0F");
+                                rect(x * side, y * side, side, side);
+                                text('🍌', x * side, y * side + toBot);
+                            }else if(weath == "winter"){
+                                fill("#8C8611");
+                                rect(x * side, y * side, side, side);
+                                text('🍌', x * side, y * side + toBot);
+                            }
+                        }
                         
                      
                         if (matrix[y][x] == 0) {
@@ -85,11 +114,8 @@ function nkarel(matrix) {
                                 text('🌰', x * side, y * side + toBot);
                         }
                         
-                        else if (matrix[y][x] == 6) {
-                                fill("orange");
-                                rect(x * side, y * side, side, side);
-                                text('🍌', x * side, y * side + toBot);
-                        } else if (matrix[y][x] == 7) {
+                
+                         else if (matrix[y][x] == 7) {
                                 fill("black");
                                 rect(x * side, y * side, side, side);
                                 text('🐵', x * side, y * side + toBot);
